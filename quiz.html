@@ -31,6 +31,13 @@
             font-size: 22px;
             margin-bottom: 20px;
         }
+
+        #message {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #d6336c;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -38,6 +45,7 @@
 <h2 id="progress"></h2>
 <div id="question"></div>
 <div id="options"></div>
+<div id="message"></div>
 
 <script>
 let q = 0;
@@ -103,7 +111,9 @@ function loadQ() {
     questions[q].options.forEach((opt, i) => {
         opts += `<button onclick="check(${i})">${opt}</button>`;
     });
+
     document.getElementById("options").innerHTML = opts;
+    document.getElementById("message").innerText = "";
 }
 
 function check(i) {
@@ -117,7 +127,12 @@ function check(i) {
     } else {
         let sound = new Audio("fahh.mp3");
         sound.play().catch(() => {});
-        alert("try again mister 😒");
+
+        document.getElementById("message").innerText = "try again mister 😒";
+
+        setTimeout(() => {
+            document.getElementById("message").innerText = "";
+        }, 1200);
     }
 }
 
