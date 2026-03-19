@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    background: rgba(255,255,255,0.5);
+    padding: 40px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+button {
+    padding: 12px 30px;
+    border-radius: 20px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff1e4d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Hey Love 💖</h1>
+    <button onclick="start()">Click Me 💌</button>
+</div>
+
+<script>
+function start() {
+    window.location.href = "quiz.html";
+}
+</script>
+
+</body>
+</html>

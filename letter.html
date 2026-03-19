@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(135deg,#ffdde1,#fad0c4);
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    background:rgba(255,255,255,0.7);
+    padding:30px;
+    border-radius:25px;
+    width:80%;
+    max-width:600px;
+    backdrop-filter:blur(10px);
+}
+
+#text{
+    white-space:pre-line;
+    line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<div id="text"></div>
+</div>
+
+<script>
+const message = `Hi my love 🫠  
+
+Did you like the fun surprise I made for you? I hope you did hehe  
+
+Aside from that oh my godddd it's really I can't believe that it's already been 1 year since we started dating honestly it was tough because we had many fights many break ups but the fact that we are still together is such a big deal my baby 🥺  
+
+I love you so so much you are my everything thank you for coming into my life and making it so special giving me the reason to why I was born and making me laugh and happy always you are such a good soul darling and I'm lucky to have you as mine 💖  
+
+I'm forever yours the dream we have of us getting married going to honeymoon naming our kids everything will come soon  
+
+But before that come to meet me idiot 😒💕  
+This year make sure no matter what you come to meet me for the first time and finally we'll kiss for the first time ever 🫠  
+
+I love you so much  
+
+from your lovely wifeyy 💖`;
+
+let i=0;
+function type(){
+if(i<message.length){
+document.getElementById("text").innerHTML+=message.charAt(i);
+i++;
+setTimeout(type,25);
+}
+}
+type();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #ffdde1, #fad0c4);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: rgba(255,255,255,0.6);
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border-radius: 15px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff1e4d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h3 id="progress"></h3>
+<h2 id="question"></h2>
+<div id="options"></div>
+</div>
+
+<script>
+let q = 0;
+
+const questions = [
+{q:"Would you still love me if I was a worm? 🐛",options:["Yes","No","I’d build you a tiny house 🥺"],answer:2},
+{q:"If I steal your food, what would you do? 🍟",options:["Get angry","Let me eat 🥺","Take it back"],answer:1},
+{q:"Who is more cute? 😏",options:["Me","You 💖","Both"],answer:1},
+{q:"If I turn into a cat, what will you do? 🐱",options:["Ignore me","Adopt me and spoil me 💖","Run away"],answer:1},
+{q:"If we break up, would you go back to your ex?",options:["Yes","No","Maybe"],answer:0},
+{q:"What is my favourite colour? 🎨",options:["Matcha green 💚","Green","Black"],answer:0},
+{q:"Which flavour ice cream do I love? 🍦",options:["Vanilla","Butterscotch","Both 😋"],answer:2},
+{q:"Which type of person am I? 🌊⛰️",options:["Beach person 🌊","Mountain person ⛰️","Stay at home person 🛋️"],answer:0},
+{q:"What is my ideal date? 💕",options:["Movie night at home 🎬","Clubbing 💃","Going out for dinner 🍽️"],answer:0},
+{q:"Who do I love the most?",options:["Joran","You","The person reading this","All of them 💖"],answer:3}
+];
+
+function loadQ(){
+document.getElementById("progress").innerText = "Question " + (q+1) + "/10";
+document.getElementById("question").innerText = questions[q].q;
+
+let opts="";
+questions[q].options.forEach((opt,i)=>{
+opts+=`<button onclick="check(${i})">${opt}</button>`;
+});
+document.getElementById("options").innerHTML=opts;
+}
+
+function check(i){
+if(i===questions[q].answer){
+q++;
+if(q<questions.length){loadQ();}
+else{window.location.href="result.html";}
+}else{
+alert("try again mister 😒");
+}
+}
+
+loadQ();
+</script>
+
+</body>
+</html>
